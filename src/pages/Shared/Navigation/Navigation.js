@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const Navigation = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" color="default">
                <Toolbar>
                     <IconButton
                         size="large"
@@ -21,8 +21,9 @@ const Navigation = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: "left" }}>
-                        CHASMISH
+                    <img src="https://image.freepik.com/free-photo/sunglasses_1203-7886.jpg" width="5%" alt="glasses"/>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: "left",marginLeft:"11px" }}>
+                    CHASMISH
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
