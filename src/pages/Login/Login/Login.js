@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { Alert, Button, CircularProgress } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
     const { user, loginUser, error, isLoading } = useAuth();
+
+    //redirect location for
+    const location = useLocation();
+    const history = useHistory();
+
+
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -19,7 +25,7 @@ const Login = () => {
     }
 
     const handleLoginSubmit = (e) => {
-        loginUser(loginData?.email, loginData?.password);
+        loginUser(loginData?.email, loginData?.password,location,history);
         e.preventDefault();
     }
     return (
