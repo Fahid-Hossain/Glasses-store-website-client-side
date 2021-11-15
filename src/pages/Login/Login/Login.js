@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
-    const [loginData,setLoginData] =useState({})
+    const [loginData, setLoginData] = useState({})
 
-    const handleOnBlur = (e)=>{
+    const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
         // console.log(field,value);
-        const newLoginData = {...loginData}
+        const newLoginData = { ...loginData }
         newLoginData[field] = value;
         setLoginData(newLoginData);
         console.log(loginData);
     }
 
     const handleLoginSubmit = (e) => {
-       e.preventDefault();
-       alert("submitting")
+        e.preventDefault();
+        alert("submitting")
     }
     return (
         <div>
@@ -41,9 +42,15 @@ const Login = () => {
                     name="password"
                     onBlur={handleOnBlur}
                 />
+               
                 <Button sx={{ width: "50%", m: 2 }} variant="contained" type="submit">Login</Button>
 
+
             </form>
+                    <h4>New User ?</h4>
+                <NavLink to="/register" style={{textDecoration:"none"}}>
+                <Button variant="outlined" type="submit">Please Register</Button>
+                </NavLink>
         </div>
     );
 };

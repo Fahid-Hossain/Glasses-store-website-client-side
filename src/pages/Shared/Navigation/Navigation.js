@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    const {user,logOut}=useAuth();
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="default">
@@ -30,7 +32,10 @@ const Navigation = () => {
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/addproduct"><Button color="inherit">Add Product</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/products"><Button color="inherit">Products</Button></NavLink>
-                    <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button color="inherit">Login</Button></NavLink>
+
+                   {
+                       user?.email ?  <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button onClick={logOut} color="inherit">Logout</Button></NavLink> :  <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button color="inherit">Login</Button></NavLink>
+                   }
                 </Toolbar>
             </AppBar>
         </Box>
