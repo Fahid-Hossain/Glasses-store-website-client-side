@@ -10,6 +10,7 @@ import Products from './pages/Products/Products';
 import Navigation from './pages/Shared/Navigation/Navigation';
 import AddProducts from './pages/Products/AddProducts/AddProducts';
 import Order from './pages/Products/Order/Order';
+import Login from './pages/Login/Login/Login';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/order/:id">
           <Order/>
+        </Route>
+        <Route path="/login">
+          <Login></Login>
         </Route>
         <Route path="*">
           <PageNotFound></PageNotFound>

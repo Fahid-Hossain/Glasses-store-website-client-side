@@ -30,7 +30,7 @@ const Navigation = () => {
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/addproduct"><Button color="inherit">Add Product</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/products"><Button color="inherit">Products</Button></NavLink>
-                    <Button color="inherit">Login</Button>
+                    <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button color="inherit">Login</Button></NavLink>
                 </Toolbar>
             </AppBar>
         </Box>
