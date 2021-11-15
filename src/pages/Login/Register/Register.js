@@ -28,14 +28,22 @@ const Register = () => {
             alert("your password did not match");
             return;
         }
-        registerUser(loginData.email, loginData.password,location,history);
+        registerUser(loginData.name,loginData.email, loginData.password,location,history);
 
     }
     return (
         <div>
-            <h1 style={{ color: "blue", marginTop: "60px" }}>Register</h1>
+            <h1 style={{ color: "blue", marginTop: "20px" }}>Register</h1>
             {
                 !isLoading && <form onSubmit={handleRegistration}>
+                    <TextField
+                        sx={{ width: "50%", m: 1 }}
+                        id="standard-basic"
+                        label="Your Name"
+                        variant="standard"
+                        name="name"
+                        onBlur={handleOnBlur}
+                    />
                     <TextField
                         sx={{ width: "50%", m: 1 }}
                         id="standard-basic"

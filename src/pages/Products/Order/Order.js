@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Alert, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -10,6 +10,7 @@ const Order = () => {
     const { id } = useParams();
 
     const [order, setOrder] = useState({});
+    const [orderSuccess,setOrderSucess] = useState(false);
 
     const {user}=useAuth();
 
@@ -23,9 +24,25 @@ const Order = () => {
     }, [])
 
       // react hook form
-      const { register, handleSubmit } = useForm();
+      const { register, handleSubmit,reset } = useForm();
       const onSubmit = data =>{
-          console.log(data);
+        //   console.log(data);
+        fetch("http://localhost:5000/orders",{
+            method:"POST",
+            headers:{
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                setOrderSucess(true);
+                reset();
+            }
+        })
+
       }
     return (
         <div>
@@ -38,6 +55,9 @@ const Order = () => {
                     <Grid item xs={12} md={6}>
                         <div className="order-form">
                             <h2 style={{marginTop:"29px"}}>ORDER NOW</h2>
+                            {
+                                orderSuccess && <Alert severity="success" style={{width:"50%",margin:"0 auto"}}>Your Order on Progress</Alert>
+                            }
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input {...register("name")} value={user?.displayName || ""} />
                                 <input {...register("email")} value={user?.email || ""} />
