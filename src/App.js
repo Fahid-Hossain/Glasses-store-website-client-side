@@ -15,6 +15,7 @@ import Register from './pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -31,9 +32,12 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/addproduct">
+            <PrivateRoute path="/addproduct">
               <AddProducts />
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/makeadmin">
+              <MakeAdmin />
+            </PrivateRoute>
             <Route path="/products">
               <Products />
             </Route>

@@ -19,6 +19,8 @@ const useFirebase = () => {
                 //name field add
                 const newUser = {displayName:name,email};
                 setUser(newUser);
+                // save user to database
+                saveUser(name,email);
                 //send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName:name
@@ -87,6 +89,22 @@ const useFirebase = () => {
             setError(error.message);
         })
         .finally(()=>setIsLoading(false));
+    }
+
+    //save user info to database
+    const saveUser =(displayName,email)=>{
+        const userInfo = {displayName,email};
+        fetch("http://localhost:5000/users",{
+            method: "POST",
+            headers:{
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
     }
 
     return {
