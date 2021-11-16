@@ -33,6 +33,10 @@ const Navigation = () => {
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/products"><Button color="inherit">Products</Button></NavLink>
 
+                    {
+                        user?.email && <NavLink style={{textDecoration: "none",color:"black"}} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
+                    }
+
                    {
                        user?.email ?  <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button onClick={logOut} color="inherit">Logout</Button></NavLink> :  <NavLink style={{textDecoration: "none",color:"black"}} to="/login"><Button color="inherit">Login</Button></NavLink>
                    }
