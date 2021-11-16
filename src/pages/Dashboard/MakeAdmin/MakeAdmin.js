@@ -30,7 +30,7 @@ const MakeAdmin = () => {
 
     }
     return (
-        <div style={{ marginTop: "5rem" }}>
+        <div>
             <h2 style={{ color: "green" }}>Make An Admin</h2>
             {
                 success && <Alert severity="success" style={{ width: "50%", margin: "18px auto" }}>Made Admin successfully !</Alert>

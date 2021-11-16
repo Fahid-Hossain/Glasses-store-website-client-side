@@ -21,7 +21,7 @@ const AddProducts = () => {
     }
     return (
         <div className="add-product">
-            <h1 className="my-5 fw-bold">ADD A PRODUCT</h1>
+            <h1 style={{color: 'green'}}>ADD A PRODUCT</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder="Products Name" {...register("name", { required: true, maxLength: 20 })} />
                 <textarea placeholder="short description" {...register("description")} />

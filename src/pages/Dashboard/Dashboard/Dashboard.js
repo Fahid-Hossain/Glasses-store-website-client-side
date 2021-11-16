@@ -20,6 +20,8 @@ import useAuth from '../../../hooks/useAuth';
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
+import AddProducts from '../../Products/AddProducts/AddProducts';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 240;
 
@@ -27,7 +29,8 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const { logOut } = useAuth();
+
+    const { logOut, admin } = useAuth();
 
     //nesting route 
     let { path, url } = useRouteMatch();
@@ -42,9 +45,22 @@ function Dashboard(props) {
             <Divider />
             {/* //nesting navlink */}
             <NavLink style={{ textDecoration: "none", color: "black" }} to="/products"><Button color="inherit">Products</Button></NavLink> <br />
-            <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}`}><Button color="inherit">My Order</Button></NavLink> <br />
-            <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/payment`}><Button color="inherit">Payment</Button></NavLink> <br />
-            <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/review`}><Button color="inherit">Review</Button></NavLink> <br />
+
+
+            {
+                !admin && <Box> <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}`}><Button color="inherit">My Order</Button></NavLink> <br />
+                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/payment`}><Button color="inherit">Payment</Button></NavLink> <br />
+                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/review`}><Button color="inherit">Review</Button></NavLink><br /></Box>
+            }
+
+
+
+            {
+                admin && <Box> <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/addproduct`}><Button color="inherit">Add_Product</Button></NavLink><br />
+                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/makeadmin`}><Button color="inherit">Make_Admin</Button></NavLink></Box>
+            }
+
+            <br />
             <NavLink style={{ textDecoration: "none", color: "black" }} to="/login"><Button onClick={logOut} color="inherit">Logout</Button></NavLink>
         </div>
     );
@@ -119,10 +135,16 @@ function Dashboard(props) {
                         <MyOrders></MyOrders>
                     </Route>
                     <Route path={`${path}/payment`}>
-                        <Payment/>
+                        <Payment />
                     </Route>
                     <Route path={`${path}/review`}>
-                        <Review/>
+                        <Review />
+                    </Route>
+                    <Route path={`${path}/addproduct`}>
+                        <AddProducts />
+                    </Route>
+                    <Route path={`${path}/makeadmin`}>
+                        <MakeAdmin />
                     </Route>
                 </Switch>
 
