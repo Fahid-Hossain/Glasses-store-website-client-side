@@ -41,6 +41,7 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             {/* //nesting navlink */}
+            <NavLink style={{ textDecoration: "none", color: "black" }} to="/products"><Button color="inherit">Products</Button></NavLink> <br />
             <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}`}><Button color="inherit">My Order</Button></NavLink> <br />
             <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/payment`}><Button color="inherit">Payment</Button></NavLink> <br />
             <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/review`}><Button color="inherit">Review</Button></NavLink> <br />

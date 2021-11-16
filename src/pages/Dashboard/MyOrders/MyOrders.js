@@ -16,6 +16,28 @@ const MyOrders = () => {
     }, [])
 
     const myorder = orders.filter(td=>td.email === user.email);
+
+    //handle cancel order
+    const handleCancel =(id)=>{
+        const proceed = window.confirm("Are you sure you want to cancel?");
+        if(proceed){
+            const url = `http://localhost:5000/orders/${id}`;
+            fetch(url,{
+                method:"DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount){
+                    alert("Successfully Canceled")
+                    const remaining = orders.filter(order=>order._id !==id);
+                    setOrders(remaining);
+                }
+            })
+        }
+    }
+
+
     return (
             <Box sx={{ flexGrow: 1 }}>
                 <h2><i>My Orders ({myorder.length})</i></h2><hr/>
@@ -40,7 +62,7 @@ const MyOrders = () => {
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <Button size="small" color="primary">
+                                    <Button onClick={()=>handleCancel(product._id)} size="small" color="primary">
                                         Cancel
                                     </Button>
                                     <span style={{color:"blue",marginLeft:"6rem"}}>status: {product?.status?.status}</span>
