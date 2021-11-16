@@ -12,6 +12,10 @@ const Order = () => {
     const [order, setOrder] = useState({});
     const [orderSuccess,setOrderSucess] = useState(false);
 
+    //
+    const {img,description,name} = order;
+
+
     const {user}=useAuth();
 
     //single data load from database
@@ -26,7 +30,11 @@ const Order = () => {
       // react hook form
       const { register, handleSubmit,reset } = useForm();
       const onSubmit = data =>{
-        //   console.log(data);
+          data.myorder = order;
+          data.status = {
+            status:"pending"
+        };
+          console.log(data);
         fetch("http://localhost:5000/orders",{
             method:"POST",
             headers:{
