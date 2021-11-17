@@ -16,6 +16,7 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
+import Footer from './pages/Footer/Footer';
 
 function App() {
   return (
@@ -57,6 +58,9 @@ function App() {
               <PageNotFound></PageNotFound>
             </Route>
           </Switch>
+          <Route>
+            <Footer></Footer>
+          </Route>
         </Router>
       </AuthProvider>
     </div >

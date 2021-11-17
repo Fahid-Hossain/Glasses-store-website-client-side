@@ -29,7 +29,6 @@ const Navigation = () => {
                     CHASMISH
                     </Typography>
 
-                    <NavLink style={{textDecoration: "none",color:"black"}} to="/addproduct"><Button color="inherit">Add Product</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{textDecoration: "none",color:"black"}} to="/products"><Button color="inherit">Products</Button></NavLink>
 
