@@ -17,6 +17,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import Footer from './pages/Footer/Footer';
 import Navbar from './pages/Shared/Navigation/Navbar';
+import ManageAllOrder from './pages/Dashboard/ManageAllOrder/ManageAllOrder';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/makeadmin">
               <MakeAdmin />
+            </PrivateRoute>
+            <PrivateRoute path="/manageallorder">
+              <ManageAllOrder/>
             </PrivateRoute>
             <Route path="/products">
               <Products />

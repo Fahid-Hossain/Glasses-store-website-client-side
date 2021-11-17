@@ -22,6 +22,7 @@ import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
 import AddProducts from '../../Products/AddProducts/AddProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 
 const drawerWidth = 240;
 
@@ -57,7 +58,10 @@ function Dashboard(props) {
 
             {
                 admin && <Box> <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/addproduct`}><Button color="inherit">Add_Product</Button></NavLink><br />
-                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/makeadmin`}><Button color="inherit">Make_Admin</Button></NavLink></Box>
+                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/makeadmin`}><Button color="inherit">Make_Admin</Button></NavLink><br/>
+                    <NavLink style={{ textDecoration: "none", color: "black" }} to={`${url}/manageallorder`}><Button color="inherit">Manage-All-Order</Button></NavLink><br/>
+
+                    </Box>
             }
 
             <br />
@@ -145,6 +149,9 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/makeadmin`}>
                         <MakeAdmin />
+                    </Route>
+                    <Route path={`${path}/manageallorder`}>
+                        <ManageAllOrder />
                     </Route>
                 </Switch>
 
