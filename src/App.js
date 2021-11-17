@@ -7,7 +7,6 @@ import {
 import Home from './pages/Home/Home/Home';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Products from './pages/Products/Products';
-import Navigation from './pages/Shared/Navigation/Navigation';
 import AddProducts from './pages/Products/AddProducts/AddProducts';
 import Order from './pages/Products/Order/Order';
 import Login from './pages/Login/Login/Login';
@@ -17,6 +16,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import Footer from './pages/Footer/Footer';
+import Navbar from './pages/Shared/Navigation/Navbar';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       <AuthProvider>
         <Router>
           <Route>
-            <Navigation></Navigation>
+            <Navbar></Navbar>
           </Route>
           <Switch>
             <Route exact path="/">
