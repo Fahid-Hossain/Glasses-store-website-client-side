@@ -1,4 +1,4 @@
-# Chasmish Glass Store Server site
+# Chasmish Glass Store Client site
 Stylish Glass with power adjusment and with different type of feature like uv protection. For more information this out our live site link.
 
 live site link : https://chasmish-glasses-store.web.app/
@@ -13,7 +13,7 @@ live site link : https://chasmish-glasses-store.web.app/
 * Admin can Order status change
 * Admin can Manage all orders
 
-#What we use our site?
+#What we use our site ?
 * Using React to build this site
 * Metarial ui for style
 * Firebase Authentication System
