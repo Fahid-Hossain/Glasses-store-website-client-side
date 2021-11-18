@@ -7,7 +7,7 @@ const HomeProducts = () => {
     //load product from database
     const [products,setProducts]=useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/products")
+        fetch("https://thawing-lake-33684.herokuapp.com/products")
         .then(res=>res.json())
         .then(data => {
             setProducts(data);

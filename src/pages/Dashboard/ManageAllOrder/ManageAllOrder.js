@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 const ManageAllOrder = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/orders`;
+        const url = `https://thawing-lake-33684.herokuapp.com/orders`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -17,7 +17,7 @@ const ManageAllOrder = () => {
     const handleCancel =(id)=>{
         const proceed = window.confirm("Are you sure you want to cancel?");
         if(proceed){
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://thawing-lake-33684.herokuapp.com/orders/${id}`;
             fetch(url,{
                 method:"DELETE"
             })
@@ -40,7 +40,7 @@ const ManageAllOrder = () => {
 
     //handle Approve 
     const handleApprove =(id)=>{
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://thawing-lake-33684.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

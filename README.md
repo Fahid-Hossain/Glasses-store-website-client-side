@@ -1,10 +1,24 @@
-# Getting Started with Create React App
+# Chasmish Glass Store Server site
+Stylish Glass with power adjusment and with different type of feature like uv protection. For more information this out our live site link.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+live site link : https://chasmish-glasses-store.web.app/
 
-## Available Scripts
+# Feature and Funtionality of our site 
+* Display Products
+* User can order product
+* user data save in database (mongodb)
+* Payment system
+* Customer Review
+* Admin can add products
+* Admin can Order status change
+* Admin can Manage all orders
 
-In the project directory, you can run:
+#What we use our site?
+* Using React to build this site
+* Metarial ui for style
+* Firebase Authentication System
+* Mongodb Atlas Database
+* Express js
 
 ### `npm start`
 

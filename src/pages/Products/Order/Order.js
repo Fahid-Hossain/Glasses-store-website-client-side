@@ -20,7 +20,7 @@ const Order = () => {
 
     //single data load from database
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://thawing-lake-33684.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data);
@@ -35,7 +35,7 @@ const Order = () => {
             status:"pending"
         };
           console.log(data);
-        fetch("http://localhost:5000/orders",{
+        fetch("https://thawing-lake-33684.herokuapp.com/orders",{
             method:"POST",
             headers:{
                 "content-type": "application/json"

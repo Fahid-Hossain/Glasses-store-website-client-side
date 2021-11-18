@@ -10,7 +10,7 @@ const AddProducts = () => {
     const onSubmit = data => {
         console.log(data);
         //post api via axios
-        axios.post("http://localhost:5000/products",data)
+        axios.post("https://thawing-lake-33684.herokuapp.com/products",data)
         .then(res=>{
             if(res.data.insertedId){
                 alert("Successfully added product");
