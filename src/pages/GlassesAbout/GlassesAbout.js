@@ -51,7 +51,8 @@ const GlassesAbout = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                    <img src="https://cdn.pixabay.com/photo/2016/07/28/10/40/sunglasses-1547492_1280.jpg" alt="" width="100%" />
+                    <img src="https://cdn.pixabay.com/photo/2016/12/01/19/44/man-1876017_1280.jpg" alt="" width="100%" />
+                <h1>Let's style is your own Way</h1>
                 </Grid>
             </Grid>
         </Box>
