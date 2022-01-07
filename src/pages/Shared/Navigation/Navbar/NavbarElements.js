@@ -15,7 +15,7 @@ color:#fff;
 display:flex;
 align-items:center;
 text-decoration:none;
-padding:0 1rem;
+padding:0 0.4rem;
 height:100%;
 cursor:pointer;
 

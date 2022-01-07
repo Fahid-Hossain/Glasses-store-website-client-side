@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material';
+import { Button, CircularProgress, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Link as NavLink } from 'react-router-dom';
@@ -17,7 +17,9 @@ const Products = () => {
   return (
     <Box sx={{ flexGrow: 1, marginTop: "21px" }}>
       <h1>NEW ARRIVAL CHASMISH</h1>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 12, sm: 12, md: 12 }}>
+      {products.length === 0 ? <Box sx={{ display: 'flex', alignItems:"center",justifyContent: 'center'}}>
+      <CircularProgress />
+    </Box> : <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 12, sm: 12, md: 12 }}>
         {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <img src={product.img} alt="" width="100%" />
@@ -30,7 +32,7 @@ const Products = () => {
 
           </Grid>
         ))}
-      </Grid>
+      </Grid>}
     </Box>
   );
 };
