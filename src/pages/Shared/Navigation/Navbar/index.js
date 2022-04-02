@@ -1,38 +1,85 @@
-import { Button, Typography } from '@mui/material';
-import React from 'react';
-import useAuth from '../../../../hooks/useAuth';
-import{Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink} from "./NavbarElements"
+import React from "react"
+import { MaterialUINav } from "material-ui-responsive-nav"
+// import useAuth from '../../../../hooks/useAuth';
+// import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements"
+// import { Button, Typography } from "@material-ui/core";
 
-const Navbar = () => {
-    const {user,logOut}=useAuth();
+const Navbar = ({ children }) => {
+    // const { user, logOut } = useAuth();
+
+    // let links = {
+    //     internal: [
+    //         {
+    //             label: "Home",
+    //             link: "/",
+    //         },
+    //         {
+    //             label: "Products",
+    //             link: "/products",
+    //         },
+    //         {
+    //             label: "Login",
+    //             link: "/login",
+    //         },
+            
+    //     ]
+    // }
+    let linksLogin = {
+        internal: [
+            {
+                label: "Home",
+                link: "/",
+            },
+            {
+                label: "Products",
+                link: "products",
+            },
+            {
+                label: "Dashboard",
+                link: "/dashboard",
+            },
+            {
+                label: "Login",
+                link: "/login",
+            },
+            
+        ]
+    }
+
     return (
-        <Nav>
-            <NavLink to="/">
-            <img src="https://cdn.pixabay.com/photo/2020/03/10/10/39/skull-4918561_1280.png" width="10%" alt="glasses"/>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: "left",marginLeft:"11px", color: "black" }}>
-                    CHASMISH
-                    </Typography>
-            </NavLink>
-            <Bars/>
-            <NavMenu>
-         
-            <NavLink style={{textDecoration: "none",color:"black"}} to="/home"><Button color="inherit">Home</Button></NavLink>
-                    <NavLink style={{textDecoration: "none",color:"black"}} to="/products"><Button color="inherit">Products</Button></NavLink>
+        <>
+            {/* ---------------------- */}
+                    <MaterialUINav
+                        global={{
+                            siteTitle: "CHASMISH",
+                            mobileBreakpoint: "xs",
+                        }}
+                        navbarConfig={{
+                            elevate: false,
+                        }}
+                        mobileMenuConfig={{
+                            slideTransition: true,
+                        }}
 
-                    {
-                        user?.email && <NavLink style={{textDecoration: "none",color:"black"}} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
-                    }
+                        // links={links}
+                        links={linksLogin}
+                        />
+                    {children}
 
-            </NavMenu>
-         {
-             user?.email ?    <NavBtn onClick={logOut}>
-             <NavBtnLink to="/login" style={{color: 'white'}}>Logout</NavBtnLink>
-         </NavBtn> :    <NavBtn>
-                <NavBtnLink to="/login" style={{color: 'white'}}>Login</NavBtnLink>
-            </NavBtn>
-         }
-        </Nav>
-    );
-};
 
+                 
+                {/* {
+                    user?.email ? <NavBtn onClick={logOut}>
+                        <NavBtnLink to="/login" style={{ color: 'white' }}>Logout</NavBtnLink>
+                    </NavBtn> : <NavBtn>
+                        <NavBtnLink to="/login" style={{ color: 'white' }}>Login</NavBtnLink>
+                    </NavBtn>
+                } */}
+                {/* ---------------------- */}
+
+
+        </>
+
+    )
+}
 export default Navbar;
