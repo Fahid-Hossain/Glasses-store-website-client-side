@@ -4,7 +4,7 @@ import React from 'react';
 
 const GlassesAbout = () => {
     return (
-        <Box style={{ marginTop: "5rem" }}>
+        <Box style={{ marginTop: "5rem"}}>
             <Grid container spacing={0}>
                 <Grid item xs={12} md={7}>
                     <Box
@@ -51,7 +51,7 @@ const GlassesAbout = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                    <img src="https://cdn.pixabay.com/photo/2016/12/01/19/44/man-1876017_1280.jpg" alt="" width="100%" />
+                    <img src="https://img.freepik.com/free-photo/smiling-blonde-business-woman-eyeglasses-pointing-away_171337-6307.jpg?t=st=1655120608~exp=1655121208~hmac=91d9be84c2b59fdbe6817308f4d08e99b174402abbc9991217dd882a5154f702&w=996" alt="" width="100%" />
                 <h1>Let's style is your own Way</h1>
                 </Grid>
             </Grid>

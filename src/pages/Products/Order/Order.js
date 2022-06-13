@@ -54,7 +54,7 @@ const Order = () => {
       }
     return (
         <div>
-            <Box sx={{ flexGrow: 1, marginTop: "20px" }}>
+            <Box sx={{ flexGrow: 1, marginTop: "5rem" }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
                         <h1>{order.name} ${order.price}</h1>

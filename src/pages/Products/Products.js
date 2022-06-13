@@ -15,7 +15,7 @@ const Products = () => {
   }, [])
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: "21px" }}>
+    <Box sx={{ flexGrow: 1, marginTop: "5rem" }}>
       <h1>NEW ARRIVAL CHASMISH</h1>
       {products.length === 0 ? <Box sx={{ display: 'flex', alignItems:"center",justifyContent: 'center'}}>
       <CircularProgress />

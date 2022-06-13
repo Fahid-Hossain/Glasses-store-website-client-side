@@ -32,7 +32,7 @@ const Navbar = ({ children }) => {
             },
             {
                 label: "Products",
-                link: "products",
+                link: "/products",
             },
             {
                 label: "Dashboard",
@@ -51,7 +51,7 @@ const Navbar = ({ children }) => {
             {/* ---------------------- */}
                     <MaterialUINav
                         global={{
-                            siteTitle: "CHASMISH",
+                            siteTitle: "OpticalCare",
                             mobileBreakpoint: "xs",
                         }}
                         navbarConfig={{
