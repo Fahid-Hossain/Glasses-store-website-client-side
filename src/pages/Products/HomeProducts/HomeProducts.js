@@ -17,7 +17,7 @@ const HomeProducts = () => {
   
     return (
         <Box sx={{ flexGrow: 1,marginTop:"21px" }}>
-            <h1 className="product-heading">NEW ARRIVAL CHASMISH</h1>
+            <h1 className="product-heading">New Arrival of Optical Glasses</h1>
       {products.length === 0 ? <Box sx={{ display: 'flex', alignItems:"center",justifyContent: 'center'}}>
       <CircularProgress />
     </Box> : <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 12, sm: 12, md: 12 }}>

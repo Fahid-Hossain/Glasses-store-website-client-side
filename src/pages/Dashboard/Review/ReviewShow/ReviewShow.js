@@ -25,9 +25,9 @@ const ReviewShow = () => {
     return (
         <Box style={{ marginTop: "5rem" }}>
             <h1 style={{ marginBottom: "" }}>What people Say to About Our Products</h1>
-            <Grid container spacing={2} style={{ marginLeft:"5px"}}>
+            <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
-                    <img src="https://img.freepik.com/free-photo/beautiful-thinking-blonde-business-woman-isolated-white-wall_231208-9740.jpg?size=626&ext=jpg&ga=GA1.2.1475832121.1648969905" alt="" width="100%" />
+                    <img src="https://img.freepik.com/free-photo/beautiful-thinking-blonde-business-woman-isolated-white-wall_231208-9740.jpg?size=626&ext=jpg&ga=GA1.2.1475832121.1648969905" alt="" width="95%" />
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Box style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

@@ -16,9 +16,9 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import Footer from './pages/Footer/Footer';
-import Navbar from './pages/Shared/Navigation/Navbar';
 import ManageAllOrder from './pages/Dashboard/ManageAllOrder/ManageAllOrder';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import Navbar from './pages/Shared/Navigation/Navbar/Navbar';
 
 function App() {
   return (
